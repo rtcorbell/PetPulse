@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Events</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Pet Events</h1>
+    <ul id="eventList"></ul>
+
+    <script>
+        // Define the event data as an array of objects
+        var eventData = [
+            {
+                "Event Name": "Howling 5K Run and Dog Walk",
+                "Date": "10/28/2023",
+                "Time": "11am",
+                "Day of Week": "Saturday",
+                "Location": "Wilson Park, 675 N Park Ave, Fayetteville, AR",
+                "Brief Description": "",
+                "Link": "https://www.eventbrite.com/e/howling-halloween-5k-and-dog-walk-tickets-686283932717"
+            },
+            {
+                "Event Name": "Calling all Pugs! Pug Pawty!",
+                "Date": "11/11/2023",
+                "Time": "3pm",
+                "Day of Week": "Saturday",
+                "Location": "Good Dog Cafe, 2640 E Huntsville Rd, Fayetteville, AR",
+                "Brief Description": "Calling all Pugs (and Pug mixes)! We are having a Pug party at Good Dog Cafe from 3:00-4:30!...",
+                "Link": "https://www.experiencefayetteville.com/calendar/44-bring-your-dog/5472-calling-all-greyhounds-2"
+            }
+        ];
+
+        // Get the <ul> element to display the event list
+        var eventList = document.getElementById("eventList");
+
+        // Loop through the event data and create list items
+        eventData.forEach(function(event) {
+            var listItem = document.createElement("li");
+            listItem.innerHTML = `<strong>${event["Event Name"]}</strong><br>
+                                  Date: ${event["Date"]}<br>
+                                  Time: ${event["Time"]}<br>
+                                  Day of Week: ${event["Day of Week"]}<br>
+                                  Location: ${event["Location"]}<br>
+                                  <a href="${event["Link"]}">More Info</a>`;
+            eventList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>

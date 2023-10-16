@@ -1,1 +1,36 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title> Pet Stores Information </title>
+   
+        
+    <style>/* <iframe src="demo_iframe.htm" height="200" width="300" title="Iframe Example"></iframe> */</style>
+</head>
+    <body>
+    
+        <h1>Stores Information</h1>
+        <ul id= "StoresList"> Stores Information</ul>
+        
+        <script>
+        //Define the Stores data 
+        var store_data = [
+            { 
+                "1.":" Pet Supplies Plus",
+                "Address":"4327 S Pleasant Crossing Blvd Ste E Rogers, AR 72756",
+                "Services": "Pet Store",
+                "Hours": "Mon 9:00 AM - 9:00 PM \n Tue 9:00 AM - 9:00 PM \n, Wed 9:00 AM - 9:00 PM \n, Thu 9:00 AM - 9:00 PM \n, Fri 9:00 AM - 9:00 PM \n",
+                "Visit Website": "petsuppliesplus.com"
+             }
+             ];
+             var StoresList = document.getElementById("StoresList");
+             
+             store_data.forEach(function(store) {
+                 var listItem = document.createElement("li");
+                listItem.innerHTML = `<strong>${store["1.Pet Supplies Plus"]}</strong><br>
+                <a href="${store["Visit Website"]}"> More Info</a>`;
+                StoresList.appendChild(listItem);
+             });
+           </script>
+    </body>
+    </html>

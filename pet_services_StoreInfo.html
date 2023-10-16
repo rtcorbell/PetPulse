@@ -5,31 +5,59 @@
     <title> Pet Stores Information </title>
    
         
-    <style>/* <iframe src="demo_iframe.htm" height="200" width="300" title="Iframe Example"></iframe> */</style>
+    <style>
+        div {
+        background-color: lightgrey;
+        width: 300px;
+        border: 15px solid green;
+        padding: 50px;
+        margin: 20px;
+        }
+    </style>
 </head>
     <body>
     
-        <h1>Stores Information</h1>
-        <ul id= "StoresList"> Stores Information</ul>
+        <h1>Pet Stores Information</h1>
+        <ul id= "StoresList"> Near by Pet Stores </ul>
         
         <script>
         //Define the Stores data 
         var store_data = [
             { 
-                "1.":" Pet Supplies Plus",
-                "Address":"4327 S Pleasant Crossing Blvd Ste E Rogers, AR 72756",
+                "Store Name" : " Pet Supplies Plus",
+                "Address": "4327 S Pleasant Crossing Blvd Ste E Rogers, AR 72756",
+                "Contact": "479-636-0526",
                 "Services": "Pet Store",
-                "Hours": "Mon 9:00 AM - 9:00 PM \n Tue 9:00 AM - 9:00 PM \n, Wed 9:00 AM - 9:00 PM \n, Thu 9:00 AM - 9:00 PM \n, Fri 9:00 AM - 9:00 PM \n",
-                "Visit Website": "petsuppliesplus.com"
+                "Hours of Operation": "Mon 9:00 AM - 9:00 PM \n   \
+                Tue 9:00 AM - 9:00 PM \n  \
+                Wed 9:00 AM - 9:00 PM \n   \
+                Thu 9:00 AM - 9:00 PM \n  \
+                Fri 9:00 AM - 9:00 PM \n",
+                "Visit Website": "https://www.petsuppliesplus.com"
+             },
+             {
+                "Store Name" : "Whole Pet",
+                "Address": "Springdale: 5320 W Sunset Ave Ste 173 Springdale, AR 72762 \n Fayetteville: 2423 N. College Ave",
+                "Contact": "Springdale: 479-419-4993 \n Fayetteville:479-249-6108 \n",
+                "Services": "Pet Stores, Pet Groomers, Pet Training",
+                "Hours of Operation" : "Mon 10:00 AM - 6:00 PM \n Tue 10:00 AM - 6:00 PM \n \ Wed 9:00 AM - 7:00 PM \n   \ Thu 9:00 AM - 7:00 PM \n   \ Fri9:00 AM - 7:00 PM \n   \
+                Sat 9:00 AM - 7:00 PM \n   \
+                Sun 12:00 PM - 5:00 PM \n",
+                "Visit Website": "https://www.wholepetpros.com"
+
              }
              ];
              var StoresList = document.getElementById("StoresList");
              
              store_data.forEach(function(store) {
                  var listItem = document.createElement("li");
-                listItem.innerHTML = `<strong>${store["1.Pet Supplies Plus"]}</strong><br>
+                listItem.innerHTML = `<strong>${store["Store Name"]}</strong><br>
+                Address: ${store["Address"]}<br>
+                Contact: ${store["Contact"]}<br>
+                Services: ${store["Services"]}<br>
+                Hours of Operation: ${store["Hours of Operation"]}
                 <a href="${store["Visit Website"]}"> More Info</a>`;
-                StoresList.appendChild(listItem);
+            StoresList.appendChild(listItem);
              });
            </script>
     </body>

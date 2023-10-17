@@ -26,13 +26,13 @@
             }
         </style>
         
-        <div> <h1>Pet Stores Information</h1> 
-            <h3>One-top Shop</h3>
-            <img src=""
+        <div> <h1>Pet Stores:</h1> 
+            <h3>One-top Shop for all your Pet Concerns</h3>
+            <img src="PetProject.jpeg" alt="petsuppliesplus" 
 
         
         </div>
-        <ul id= "StoresList"> <strong>Near by Pet Stores </strong> </ul>
+        <ul id= "StoresList"> <strong>Near by Pet Stores <br><br> </strong> </ul> /> 
         
         
         
@@ -71,13 +71,13 @@
              var StoresList = document.getElementById("StoresList");
              
              store_data.forEach(function(store) {
-                 var listItem = document.createElement("li");
-                listItem.innerHTML = `<strong>${store["Store Name"]}</strong><br>
-                Address: ${store["Address"]}<br>
-                Contact: ${store["Contact"]}<br>
-                Services: ${store["Services"]}<br>
-                Hours of Operation: ${store["Hours of Operation"]}
-                <a href="${store["Visit Website"]}"> Visit the Website </a>`;
+                 var listItem = document.createElement("li") ; 
+                listItem.innerHTML = `<strong>${store["Store Name"]}</strong><br><br>
+                Address: ${store["Address"]}<br> <br>
+                Contact: ${store["Contact"]}<br> <br>
+                Services: ${store["Services"]}<br> <br>
+                Hours of Operation: <br> ${store["Hours of Operation"]} <br> <br>
+                <a href="${store["Visit Website"]}"> Visit the Website </a> <br> <br>`; 
             StoresList.appendChild(listItem);
              });
            </script>

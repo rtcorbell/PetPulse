@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title> Pet Stores Information </title>
+   
+        
+    <style>
+        div {
+        background-color: rgb(171, 164, 164);
+        width: 300px;
+        border: 15px solid rgb(15, 171, 219);
+        padding: 50px;
+        margin: 20px;
+        }
+    </style>
+</head>
+    <body>
+    
+        <h1>Pet Stores Information</h1>
+        <ul id= "StoresList"> Near by Pet Stores </ul>
+        
+        <script>
+        //Define the Stores data 
+        var store_data = [
+            { 
+                "Store Name" : " Pet Supplies Plus",
+                "Address": "4327 S Pleasant Crossing Blvd Ste E Rogers, AR 72756",
+                "Contact": "479-636-0526",
+                "Services": "Pet Store",
+                "Hours of Operation": "Mon 9:00 AM - 9:00 PM \n   \
+                Tue 9:00 AM - 9:00 PM \n  \
+                Wed 9:00 AM - 9:00 PM \n   \
+                Thu 9:00 AM - 9:00 PM \n  \
+                Fri 9:00 AM - 9:00 PM \n",
+                "Visit Website": "https://www.petsuppliesplus.com"
+             },
+             {
+                "Store Name" : "Whole Pet",
+                "Address": "Springdale: 5320 W Sunset Ave Ste 173 Springdale, AR 72762 \n Fayetteville: 2423 N. College Ave",
+                "Contact": "Springdale: 479-419-4993, Fayetteville:479-249-6108 \n",
+                "Services": "Pet Stores, Pet Groomers, Pet Training",
+                "Hours of Operation" : "Mon 10:00 AM - 6:00 PM \n  \
+                Tue 10:00 AM - 6:00 PM \n  \
+                Wed 9:00 AM - 7:00 PM \n   \
+                Thu 9:00 AM - 7:00 PM \n   \
+                Fri 9:00 AM - 7:00 PM \n   \
+                Sat 9:00 AM - 7:00 PM \n   \
+                Sun 12:00 PM - 5:00 PM \n",
+                "Visit Website": "https://www.wholepetpros.com"
 
+             }
+             ];
+             var StoresList = document.getElementById("StoresList");
+             
+             store_data.forEach(function(store) {
+                 var listItem = document.createElement("li");
+                listItem.innerHTML = `<strong>${store["Store Name"]}</strong><br>
+                Address: ${store["Address"]}<br>
+                Contact: ${store["Contact"]}<br>
+                Services: ${store["Services"]}<br>
+                Hours of Operation: ${store["Hours of Operation"]}
+                <a href="${store["Visit Website"]}"> Visit the Website </a>`;
+            StoresList.appendChild(listItem);
+             });
+           </script>
+    </body>
+    </html>

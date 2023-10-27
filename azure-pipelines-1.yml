@@ -4,16 +4,12 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- '*'
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'windows-latest'
 
 steps:
-- script: echo 'Checking out the source code'
-  displayName: 'Checkout Source Code'
-- task: ArchiveFiles@2
+- task: gitmirror@0
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)'
-    includeRootFolder: false
-- task: PublishBuildArtifacts@1
+    GitRepoUrl: 'https://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@dev.azure.com/WCOB-ISYS5423/PetPulse%20(F23-P2)/_git/PetPulse01.git'

@@ -10,6 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- task: gitmirror@0
+- task: Git@2
   inputs:
-    GitRepoUrl: 'https://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@dev.azure.com/WCOB-ISYS5423/PetPulse%20(F23-P2)/_git/PetPulse01.git'
+    repository: 'https://dev.azure.com/WCOB-ISYS5423/PetPulse%20(F23-P2)/_git/PetPulse01'
+    clean: true

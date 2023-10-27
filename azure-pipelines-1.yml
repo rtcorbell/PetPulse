@@ -10,7 +10,9 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- task: Git@2
-  inputs:
-    repository: 'https://dev.azure.com/WCOB-ISYS5423/PetPulse%20(F23-P2)/_git/PetPulse01'
-    clean: true
+- script: |
+    git clone https://github.com/rtcorbell/PetPulse.git
+    cd repo
+    git remote set-url --add --push origin https://dev.azure.com/WCOB-ISYS5423/PetPulse%20(F23-P2)/_git/PetPulse01
+    git push --mirror
+  displayName: 'Mirror GitHub repo and push to Azure DevOps'

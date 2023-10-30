@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <title>Event List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Link to the Event Input Page -->
+    <a href="Pet_Social_CreateEvent.html">
+        <button>Create Event</button>
+    </a>
+    <h1>Upcoming Events</h1>
+
+    
+
+    <ul id="eventList">
+        <!-- Existing events will be displayed here -->
+    </ul>
+
+    <script>
+        // Define an array to store events
+        const events = [];
+
+        // Function to add an event to the list
+        function addEventToTheList(event) {
+            events.push(event); // Add the event to the array
+
+            // Get the event list ul element
+            const eventList = document.getElementById("eventList");
+
+            // Create a new list item for the event
+            const listItem = document.createElement("li");
+            listItem.textContent = `Event Name: ${event.eventName}, Location: ${event.eventLocation}, Time: ${event.eventTime}, Description: ${event.eventDescription}`;
+
+            // Append the list item to the event list
+            eventList.appendChild(listItem);
+        }
+
+        // Function to display existing events
+        function displayExistingEvents() {
+            const eventList = document.getElementById("eventList");
+            eventList.innerHTML = ''; // Clear the list
+
+            const events = JSON.parse(localStorage.getItem("events")) || [];
+
+            for (const event of events) {
+                const listItem = document.createElement("li");
+                listItem.textContent = `Event Name: ${event.eventName}, Location: ${event.eventLocation}, Time: ${event.eventTime}, Description: ${event.eventDescription}`;
+                eventList.appendChild(listItem);
+            }
+        }
+
+        // Call the function to display existing events when the page loads
+        displayExistingEvents();
+    </script>
+</body>
+</html>

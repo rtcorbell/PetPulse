@@ -1,0 +1,86 @@
+<!-- Story #604 - Create Playdate Event -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Event</title>
+    <style>
+        /* Style for aligning form elements horizontally */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label, input, textarea {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Event</h1>
+
+    <form onsubmit="return displayConfirmationMessage()">
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" required>
+
+        <label for="eventLocation">Event Location:</label>
+        <input type="text" id="eventLocation" required>
+
+        <label for="eventTime">Event Time:</label>
+        <input type="text" id="eventTime" required>
+
+        <label for="eventDescription">Event Description:</label>
+        <textarea id="eventDescription" required></textarea>
+
+        <button type="submit">Create Event</button>
+    </form>
+
+    <!-- Display confirmation message in a div -->
+    <div id="confirmationMessage" style="display: none;"></div>
+
+    <script>
+        function displayConfirmationMessage() {
+            // Get the event details from the form
+            const eventName = document.getElementById("eventName").value;
+            const eventLocation = document.getElementById("eventLocation").value;
+            const eventTime = document.getElementById("eventTime").value;
+            const eventDescription = document.getElementById("eventDescription").value;
+
+            // Create an event object
+            const eventDetails = {
+                eventName: eventName,
+                eventLocation: eventLocation,
+                eventTime: eventTime,
+                eventDescription: eventDescription
+                };
+
+            // Store the event in localStorage
+            storeEvent(eventDetails);
+
+            // Create a confirmation message
+            const confirmationMessage = `Event Created Successfully!\n\nEvent Name: ${eventName}\nLocation: ${eventLocation}\nTime: ${eventTime}\nDescription: ${eventDescription}`;
+
+            // Display the confirmation message in the div
+            const confirmationDiv = document.getElementById("confirmationMessage");
+            confirmationDiv.textContent = confirmationMessage;
+            confirmationDiv.style.display = "block";
+
+            // Automatically redirect to the event list page after 2 seconds (2000 milliseconds)
+            setTimeout(function() {
+                window.location.href = 'Pet_Social.html'; // Correct the page name
+            }, 2000);
+
+            // Return false to prevent the form from being submitted immediately
+            return false;
+        }
+
+        function storeEvent(event) {
+
+            const events = JSON.parse(localStorage.getItem("events")) || [];
+            events.push(event);
+            localStorage.setItem("events", JSON.stringify(events));
+        }
+
+    </script>
+</body>
+</html>

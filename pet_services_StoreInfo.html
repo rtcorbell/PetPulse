@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title> Pet Stores Information </title>
-    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
     <body>
@@ -15,16 +15,80 @@
             padding: 50px;
             margin: 20px;
             } */
-            div {
-            border: 1px solid black;
-            background-color: lightblue;
-            padding-top: 25px;
-            padding-right: 30px;
-            padding-bottom: 25px;
-            padding-left: 50px;
-            box-sizing: content-box;
+            #PetStores{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            }
+
+            .pet-stores {
+            letter-spacing: 1px;
+            margin:30px 0px;
+            padding:10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            }
+
+            .pet-stores h1{
+            font-size: 2.5rem;
+            font-weight: 500;
+            background-color: #202020;
+            color: #ffffff;
+            padding: 10px 20px;
+            }
+
+            .pet-stores span{
+            font-size: medium;
+            color: chocolate;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            }
+
+            .nearby-stores strong{
+            font-size: 2.3rem;
+            font-weight: 500;
+            background-color: #202020;
+            color: #ffffff;
+            padding: 10px 20px;
+            }
+
+            .StoresList {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+                background-color: lightblue;
+                padding-top: 25px;
+                padding-right: 30px;
+                padding-bottom: 25px;
+                padding-left: 50px;
+                box-sizing: content-box;
             } 
+        
+        .PetImage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2500px;
+            height: auto;
+            clip-path: ellipse();
+        }
+
+        .listItem strong{
+            font-size: 2.3rem;
+            font-weight: 500;
+            background-color: #451d03;
+            color: #ffffff;
+            padding: 10px 20px;
+            }
+        
         </style>
+
         <header>
             <div class="logo">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB8CAMAAACcwCSMAAAAY1BMVEX///8AAAD8/PwEBAT39/fm5ubh4eFdXV3Nzc3e3t7x8fHGxsbBwcHY2NhxcXGUlJSnp6cdHR24uLh7e3uOjo5ISEgjIyM7OzuEhISfn58VFRVmZmYwMDBXV1cNDQ2xsbFPT08StQ3CAAAEf0lEQVRoge2ZC7OjLAyGAcVrvbTWW7Wt//9XbgAFrNqdnc+cM/MN78x2q+72kRCSEAhxcnJycnJycnJy+v+JEcLfRRkQxn4DXzwoqPN/g90D2YM/w8/QlX1nM8d0UbE8wVVWltHyvZLDlop/AM1rQbre5EXSGniBP/LkOrM6YXn+0GanNTaakDv1POVjPYw0eBn4FX3gvjXUAOagMZcPX7ocE3/hrHpuYLSCd5nMnDcCmNzrMUyRZj8yMEqZmAWtEJCR+nrHoQfWyGm2sgT4f7a4wAWDTXwbnsKNUjs7zHVtrICiQaM9KkNNNc84mCGjelJw4Kk1ci7vvEf4+gTXJ4V5lGCwGQk1oCVzOA8yLoO9sQpFSTOM+Hpi089HTwPHYAslufr9Xo7b51nGhZFh5J1m5+djfWlfwqKqrivhbSzN28Z7Ne1wE/ybhkd/+aV/16V+0WbI5GvIuc4sO7dveJdm9vbu9CBzodrc5oYV76CWmQNcfnp8S3QOKdSNt2AvcPGl8UkA/jBdzk8s1gKPhHdFdKOGE6Qq9r0gPJlCknplc/WgDTDIxEw5MB5cxnRvDReXLceBxxYnJf64tbrQiBJXiR2/UmtJfwy+xYFnBhLDm3i7cA8KCRT1ysWEw5F9o0thTDusoVIVKmO8LmjWg6clAlwo7sZXU3Gyt8g1vEOCq8KYWIt+B15hoZfP4hBOEUc+qztEe0iVq6XhEP4DW7bwGI4V3o3ylaEtTXxbR7AsPTXdlavBVj7JOgj2jzzdMpjcUT1PMwgkVHvYs3snCSPb1ghsJaWaExsXvYH33/4d0675PLHK6Oc94Rh9bQTpKmBT5v8nxcXUNFP/PX8zKw+fHHy+ObCqIe22yXP5H+LjFN9n+zZPAnXbTkCTvOP3UAXXiFGQh9dXc/fhvawpl2UniebyC6nkgJJHASZ/vaEWvZJI95POdD9LrJ7XYLcqvcT+LRl1PAwx6ntm1Zbc7Kc9OpF1MkSptiDjLQV9r6sOT3aPVg0dnArfmBZqGrakoBu8luUBHhLcNCUHuGKduJ7kht1ORx4OXLdN5v4ETy+ZCge9BUdyONOC71f312XnDYFN7Kj2mcOt7R7SrsqUOdLqflTeu+KtsrlJM0i7WQgliiEiXNzN7veaRDjnc3AdMyw20It2bAufJJ2V1GgO2TfIr9Qb72jjVulSlFSZdTAgxyuYPMp+4hBsu4V/JEsCTvohzEu8w7Byw4Y8rtY7m48IsNoYqmezaSDIle+HSz8HL7XttS6aREYhLRSvjza9qllv+5mHEueSxx5YaLC3Wjjw+xGbjszKeijnr357CH/E5GquMM6B+OsQDpXcoFxRfGBsp7/B36KemU9jUdLqF7OLfvlcU8AuDyXAFbuLXErk2fj+nCqkTQvE0IO2MF1VESjjhh8NmiP4A4P4geeHLSN0uNwS9lWe5+XlI+A0+HBb67yO1Rw90mD7PtLu9EBMl41CSAfrX5TpoFMjlo77YlDGqmwS7vQn8ekkScuizLDO/JycnJycnJycnJx+SX8Aj1Eo6XeYbIQAAAAASUVORK5CYII=" 
@@ -41,16 +105,31 @@
                 <a href="#">Pet Social</a>
                 <a href="Inquiry.html">Contact</a>
             </nav>
+
+            
         </header>
-
-
-        <div> <h1>Pet Stores:</h1> 
-            <h3>One-stop Shop for all your Pet Concerns</h3>
-            <img src="PetProject.jpeg" alt="petsuppliesplus" 
-
         
+        <section id="PetStores">
+
+            <!-- heading -------->
+
+            <div class = "pet-stores">
+                <br>
+                <span> One-stop shop</span>
+                <h1>Pet Stores </h1>
+            </div>
+            
+            <div class="PetImage">
+            <img src="PetProject.jpeg" alt="petsuppliesplus" >
+            </div>
+        
+
+        <div class="nearby-stores"><strong>Nearby Pet Stores</strong> 
         </div>
-        <ul id= "StoresList"> <strong>Near by Pet Stores <br><br> </strong> </ul> 
+        <br>
+        <br>
+        
+        <div id= "StoresList"> 
         
         
         
@@ -60,7 +139,7 @@
         var store_data = [
             { 
                 "Store Name" : " Pet Supplies Plus",
-                "Address": "4327 S Pleasant Crossing Blvd Ste E Rogers, AR 72756",
+                "Location": "4327 S Pleasant Crossing Blvd Ste E Rogers, AR 72756",
                 "Contact": "479-636-0526",
                 "Services": "Pet Store",
                 "Hours of Operation": "<br>"+
@@ -73,8 +152,11 @@
              },
              {
                 "Store Name" : "Whole Pet",
-                "Address": "Springdale: 5320 W Sunset Ave Ste 173 Springdale, AR 72762 \n Fayetteville: 2423 N. College Ave",
-                "Contact": "Springdale: 479-419-4993, Fayetteville:479-249-6108 \n",
+                "Location": "<br>"+
+                "Springdale: 5320 W Sunset Ave, Ste 173 Springdale, AR 72762 <br>"+
+                "Fayetteville: 2423 N. College Ave, Fayetteville, AR 72703",
+                "Contact": "Springdale: 479-419-4993, <br>"+
+                "Fayetteville: 479-249-6108 \n",
                 "Services": "Pet Stores, Pet Groomers, Pet Training",
                 "Hours of Operation" : "<br>"+
                 "Mon 10:00 AM - 6:00 PM<br>"+ 
@@ -93,7 +175,7 @@
              store_data.forEach(function(store) {
                  var listItem = document.createElement("li") ; 
                 listItem.innerHTML = `<strong>${store["Store Name"]}</strong><br><br>
-                Address: ${store["Address"]}<br> <br>
+                Location: ${store["Location"]}<br> <br>
                 Contact: ${store["Contact"]}<br> <br>
                 Services: ${store["Services"]}<br> <br>
                 Hours of Operation: <br> ${store["Hours of Operation"]} <br> <br>
@@ -101,6 +183,8 @@
             StoresList.appendChild(listItem);
              });
            </script>
+
+</div> 
     
     <div class="HealthSearch">
             
@@ -113,6 +197,7 @@
     </center>
                
     </div>
+    
     </body>
     </html>
 
@@ -132,5 +217,6 @@
         <a href="https://www.google.com.br/maps/search/pet+salons/@36.1131911,-94.5514456,9z/data=!3m1!4b1?entry=ttu" target="_blank">List of pet Salons</a>
         
     </body>
+</section>
     </html>
     

@@ -5,7 +5,7 @@
     padding: 0;
 } */
 
-/* Body style changed by -----> DB */
+/* Body CSS style changed by -----> DB */
 body {
     display: flex;
     justify-content: center;
@@ -109,6 +109,8 @@ th {
     background-color: #f2f2f2;
 }
 
+/* User Story: 623 Website reviews ------> DB*/
+
 #testimonials{
     display: flex;
     justify-content: center;
@@ -154,6 +156,7 @@ th {
 }
 
 .testimonial-box {
+   
     width: 500px;
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
@@ -202,7 +205,10 @@ th {
 }
 
 .reviews {
+    display: flex;
+    justify-content: right;
     color: #f9d71c;
+    
 }
 
 .box-top{
@@ -220,6 +226,13 @@ th {
 .testimonial-box:hover {
     transform: translateY(-10px);
     transition: all ease 0.3s;
+}
+
+.datetime {
+    display: flex;
+    justify-content: right;
+    color: #979797;
+    font-size: 0.8rem;
 }
 
 

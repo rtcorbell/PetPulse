@@ -1,9 +1,21 @@
 /* style.css */
-body {
+/*body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
+} */
+
+/* Body CSS style changed by -----> DB */
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: #f6f6f6;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ,Georgia, Times, 'Times New Roman', serif, sans-serif;
+    
+  }
 
 .person {
     margin: 20px;
@@ -23,7 +35,7 @@ body {
     width: 100%;
     max-width: 200px;
     height: auto;
-}
+} 
 
 header {
     background-color: #ffffff;
@@ -56,12 +68,14 @@ nav a {
     font-size: 16px;
     display: inline;
     white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -94,3 +108,131 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+/* User Story: 623 Website reviews ------> DB*/
+
+#testimonials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.testimonial-heading{
+    letter-spacing: 1px;
+    margin:30px 0px;
+    padding:10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.testimonial-heading h2{
+    font-size: 2.2rem;
+    font-weight: 500;
+    background-color: #202020;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+.testimonial-heading span{
+    font-size: medium;
+    color: chocolate;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.testimonials-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.testimonial-box {
+   
+    width: 500px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+
+}
+
+.profile-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+}
+
+.name-user{
+    display: flex;
+    flex-direction: column;
+}
+
+.name-user strong{
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+
+}
+
+.name-user span{
+    color: #979797;
+    font-size: 0.8rem;
+}
+
+.reviews {
+    display: flex;
+    justify-content: right;
+    color: #f9d71c;
+    
+}
+
+.box-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.client-comment p{
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}
+
+.testimonial-box:hover {
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+}
+
+.datetime {
+    display: flex;
+    justify-content: right;
+    color: #979797;
+    font-size: 0.8rem;
+}
+
+

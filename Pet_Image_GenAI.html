@@ -1,12 +1,7 @@
-<! --Pet Events - Event Planner is the subpage that will be used by Event Planner Persona>
-<! --The code below is for the User story (632): As an event planner, I want to manage guests list, so that I can keep track of people attending the event.>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pet Events - Event Planner</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Image Generation</title>
 </head>
 <body>
     <!-- Defect #1067 - Header Updated across the site-->
@@ -34,37 +29,48 @@
         
 
     </header>
-    <div class="">
-        <h1>Event Planner Resources</h1><br>
-        <h2>Guest List - RSVP</h2><br>
+    <h1>Image Generation</h1>
+    <button id="generateImage">Generate Image</button>
+    <div id="imageContainer"></div>
 
-        <h3>Event Name: _______</h3><br>
+    <script>
+        document.getElementById('generateImage').addEventListener('click', generateImage);
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email Address</th>
-                    <th>Phone Number</th>
-                    <th>Mailing Address</th>
-                    <th>RSVP Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John Doe</td>
-                    <td>john@example.com</td>
-                    <td>(123) 456-7890</td>
-                    <td>123 Main St, City, State, ZIP</td>
-                    <td>Confirmed</td>
-                </tr>
-                <tr>
-                    <td>Jane Smith</td>
-                    <td>jane@example.com</td>
-                    <td>(456) 789-1234</td>
-                    <td>456 Elm St, City, State, ZIP</td>
-                    <td>Not Confirmed</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        function generateImage() {
+            const apiUrl = 'https://api.openai.com/v1/images/generations';
+
+            const requestOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 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', // Replace 'ABC' with your actual API key
+                },
+                body: JSON.stringify({
+                    model: 'dall-e-3',
+                    prompt: 'a white siamese cat',
+                    n: 1,
+                    size: '1024x1024'
+                }),
+            };
+
+            fetch(apiUrl, requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                    const imageContainer = document.getElementById('imageContainer');
+
+                    if (data && data.data && data.data.length > 0 && data.data[0].url) {
+                        const image = document.createElement('img');
+                        image.src = data.data[0].url;
+                        imageContainer.appendChild(image);
+                    } else {
+                        alert('No image URL found in the response.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while generating the image: ' + error.message); // Display the API error message
+                });
+        }
+    </script>
+</body>
+</html>

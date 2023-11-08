@@ -235,4 +235,31 @@ th {
     font-size: 0.8rem;
 }
 
+.cta-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
 
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+hr {
+    border: 1;
+    border-top: 2px solid #000000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footnote {
+    font-style: italic;
+    text-align: center;
+    color: #777;
+}

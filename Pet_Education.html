@@ -134,6 +134,56 @@
     }
 </style>
 
+
+
+
+<!--Pet Education - EPIC 608 -->
+<!--User story (621) Pet legal knowledge (HM)-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet-Friendly Legal Rights</title>
+</head>
+<body>
+
+    <h1>Learn About Pet-Friendly Legal Rights</h1>
+    <p>As a pet owner, it's essential to understand your legal rights related to your pets.</p>
+    
+    <h3>Search for Legal Rights by Location</h3>
+    <p>Search pet legal rights in a specific zip code:</p>
+    <input type="text" id="zipCode" placeholder="Enter Zip Code" style="width: 150px; height: 30px;">
+    <button id="searchButton" style="width: 100px; height: 20px;">Search</button>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function () {
+            var zipCode = document.getElementById('zipCode').value;
+            var googleSearchUrl = 'https://www.google.com/search?q=pet+legal+rights+in+' + zipCode;
+            window.location.href = googleSearchUrl;
+        });
+    </script>
+
+    <h3>Legal Services in Your Area</h3>
+    <ul>
+        <li><a href="https://www.levarlaw.com/blog/arkansas-dog-leash-dog-bite-laws/">Legal Service 1</a></li>
+        <li><a href="https://taylorkinglaw.com/leash-laws-animal-control-laws-in-arkansas/">Legal Service 2</a></li>
+        <li><a href="https://www.justanswer.com/sip/ask-a-lawyer?r=ppc|ga|1|Law%20-%20Search|Pet%20Law%20-%201&JPKW=help%20pet%20law&JPDC=S&JPST=&JPAD=252686755112&JPMT=b&JPNW=g&JPAF=txt&JPCD=20180216&JPRC=1&JPOP=AES_Law_ETA%201&cmpid=6746643&agid=1124860503&fiid=&tgtid=kwd-18430348323&ntw=g&dvc=c&gclid=Cj0KCQiAo7KqBhDhARIsAKhZ4uiH7UoKXcz9c-rb_DVUspMExtEdl6XJiNgdRjETMekajLtKBoLav7MaAv0jEALw_wcB">Legal Service 3</a></li>
+    </ul>
+    
+    <h3>Quick Links</h3>
+    <ul>
+        <li><a href="https://usserviceanimals.org/blog/what-are-the-arkansas-emotional-support-animal-laws/">Legal Rights Library</a></li>
+        <li><a href="https://www.healthy.arkansas.gov/programs-services/topics/pet-store-regulations">Pet Owner Resources</a></li>
+        <li><a href="https://www.houndslounge.com/blog/8-shocking-dog-laws-in-arkansas/">Local Pet Regulations</a></li>
+        <li><a href="https://lionlegal.com/who-gets-the-pets-in-arkansas-divorce/">How to get the pet in a divorce?</a></li>
+        <li><a href="https://www.jamesforarkansas.com/arkansas-dog-laws/">Ask and get your answer</a></li>
+    </ul>
+</body>
+</html>
+
+
+
+
+
 <!-- Story: 705 Emergency Contact -->
 <!-- Task: 1104-1105-1106 -->
 

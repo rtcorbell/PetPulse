@@ -184,6 +184,41 @@
 
 
 
+<!-- Pet News section -->
+<!-- Story: 618 Pet News Content -->
+<!-- Task: 1114 -->
+<h2>Pet News</h2>
+<p>Stay up-to-date with the latest pet-related news:</p>
+
+<!-- Search button for pet news -->
+<button id="searchNewsButton">Search for Pet News</button>
+
+<!-- Links to reputable pet news websites -->
+<h3>Reputable Pet News Websites:</h3>
+<ul>
+    <li><a href="https://www.akc.org">American Kennel Club (AKC)</a></li>
+    <li><a href="https://www.aspca.org/news">ASPCA News</a></li>
+    <li><a href="https://www.humanesociety.org/news">The Humane Society of the United States News</a></li>
+    <!-- Add more reputable sources as needed -->
+</ul>
+
+<script>
+    document.getElementById('searchNewsButton').addEventListener('click', function () {
+        // Define the search query, for example, "latest pet news"
+        var searchQuery = "latest pet news";
+        // Create the search URL with the query
+        var searchUrl = 'https://www.google.com/search?q=' + encodeURI(searchQuery);
+        // Open the search results in a new window or tab
+        window.open(searchUrl, '_blank');
+    });
+</script>
+
+
+
+
+
+
+
 <!-- Story: 705 Emergency Contact -->
 <!-- Task: 1104-1105-1106 -->
 

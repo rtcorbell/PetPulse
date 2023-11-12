@@ -6,6 +6,27 @@
         <meta name="robots" content="INDEX,FOLLOW">
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+    
+            h1 {
+                text-align: center;
+            }
+    
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+    
+            li {
+                border: 1px solid #ddd;
+                margin: 10px 0;
+                padding: 10px;
+                background-color: #f5f5f5;
+            }
+        </style>
     </head>
     
     <body>
@@ -71,11 +92,6 @@
     <button>Enter the Virtual Pet Metaverse</button>
 </a>
 
-
-
-
-
-
     <!-- Link to the Event Input Page -->
     <a href="Pet_Social_CreateEvent.html">
         <button>Create Event</button>
@@ -87,6 +103,15 @@
     <ul id="eventList">
         <!-- Existing events will be displayed here -->
     </ul>
+
+    <div id="joinEventSection">
+        <h2>Join an Event</h2>
+        <select id="eventDropdown">
+            <!-- Existing events will be populated here dynamically -->
+        </select>
+        <button onclick="joinEvent()">Join Event</button>
+        <button onclick="cancelAttendance()">Cancel Attendance</button>
+    </div>
 
     <script>
         // Define an array to store events
@@ -120,6 +145,51 @@
                 eventList.appendChild(listItem);
             }
         }
+
+        function populateEventDropdown() {
+            const eventDropdown = document.getElementById("eventDropdown");
+            eventDropdown.innerHTML = '';
+
+            // Get events from local storage
+            const events = JSON.parse(localStorage.getItem("events")) || [];
+
+            for (const event of events) {
+                const option = document.createElement("option");
+                option.value = event.eventName;
+                option.textContent = event.eventName;
+                eventDropdown.appendChild(option);
+            }
+        }
+
+        // Function to join an event
+        function joinEvent() {
+            const selectedEventName = document.getElementById("eventDropdown").value;
+            const selectedEvent = events.find(event => event.eventName === selectedEventName);
+
+            // Add user to the list of attendees
+            selectedEvent.attendees.push("User"); // Assuming "User" is the username; replace it with the actual username
+
+            // Update the display
+            displayExistingEvents();
+        }
+
+        // Function to cancel attendance
+        function cancelAttendance() {
+            const selectedEventName = document.getElementById("eventDropdown").value;
+            const selectedEvent = events.find(event => event.eventName === selectedEventName);
+
+            // Remove user from the list of attendees
+            const userIndex = selectedEvent.attendees.indexOf("User"); // Replace "User" with the actual username
+            if (userIndex !== -1) {
+                selectedEvent.attendees.splice(userIndex, 1);
+            }
+
+            // Update the display
+            displayExistingEvents();
+        }
+
+        // Call the function to populate the dropdown when the page loads
+        populateEventDropdown();
 
         // Call the function to display existing events when the page loads
         displayExistingEvents();

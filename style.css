@@ -41,11 +41,11 @@ body {
 /* Updating navigation menu to add a drop down menu (DB)*/
 
 .header-main {
-    background-color: #a5daee;
+    background-color: #108bb8;
     color: #0c0c0c;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: auto;
     padding: 0 60px;
     padding-top: 25px;
     
@@ -67,8 +67,8 @@ body {
 .header-main ul li a {
     display: flex;
     padding: 0 20px;
-    height: 100%;
-    line-height: 60px;
+    height: auto;
+    line-height: 80px;
     font-size: 1rem;
     font-family:Cambria;
     text-transform: uppercase;

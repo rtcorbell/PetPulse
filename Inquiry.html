@@ -3,14 +3,96 @@
 <html>
 <head>
     <title>Inquiry Form</title>
-    <style>
-        label {
-            display: inline-block;
-            width: 200px; /* Adjust the width as needed */
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+   
+   <style>
+    .header-main {
+    
+        display: flex;
+        padding-top: 20px;
+        justify-content: space-between;
+        background-color: #108bb8;
+        box-sizing: border-box;
+        color: #131313;
+        width: auto; 
+       }
+    
+        .header-main ul{
+        height: 100%;
+        padding-left: 40px;
+        list-style: none;
+        display: flex;
+        align-self: center;
+        
         }
-    </style>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    
+        .header-main ul li a {
+        display: flex;
+        padding: 0 20px;
+        height: auto;
+        line-height: 80px;
+        font-size: 1rem;
+        font-family:Cambria;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all ease-in-out 100ms;
+    
+    }
+    
+        .header-main ul li a:hover {
+        background-color: #151515;
+        color: #f6f1f1;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: #000000;
+        margin: 0 5px;
+        padding: 10px 0;
+        font-size: 16px;
+        display: inline;
+        white-space: nowrap;
+        box-sizing: border-box; 
+    } 
+ 
+    
+    
+    body {
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100vh;
+                background-image: linear-gradient(rgba(69, 69, 114, 0.8), rgba(69,69,114, 0.8)), url(bg1.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+             h1 {
+                display: flex;
+                flex-direction: column;
+                color: rgb(247, 156, 45);
+            }
+            form {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                width: 200%;
+                height: 400px;
+                max-width: 400px;
+                padding: 20px;
+                border: 2px solid #1b1515;
+                border-radius: 15px;
+                background-color: #fff;
+            }
+            </style>
+
     <script>
         function showConfirmation() {
             document.getElementById('inquiry-form').style.display = 'none';
@@ -19,11 +101,12 @@
     </script>
 
 <!-- Task #816 and #817 - Create Input Boxes and Button -->
-</head>
+
 <body>
     <!-- Defect #1067 - Header Updated across the site-->
 
-    <header> 
+    <header class="header-main">
+        <nav>
         <div class="logo">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB8CAMAAACcwCSMAAAAY1BMVEX///8AAAD8/PwEBAT39/fm5ubh4eFdXV3Nzc3e3t7x8fHGxsbBwcHY2NhxcXGUlJSnp6cdHR24uLh7e3uOjo5ISEgjIyM7OzuEhISfn58VFRVmZmYwMDBXV1cNDQ2xsbFPT08StQ3CAAAEf0lEQVRoge2ZC7OjLAyGAcVrvbTWW7Wt//9XbgAFrNqdnc+cM/MN78x2q+72kRCSEAhxcnJycnJycnJy+v+JEcLfRRkQxn4DXzwoqPN/g90D2YM/w8/QlX1nM8d0UbE8wVVWltHyvZLDlop/AM1rQbre5EXSGniBP/LkOrM6YXn+0GanNTaakDv1POVjPYw0eBn4FX3gvjXUAOagMZcPX7ocE3/hrHpuYLSCd5nMnDcCmNzrMUyRZj8yMEqZmAWtEJCR+nrHoQfWyGm2sgT4f7a4wAWDTXwbnsKNUjs7zHVtrICiQaM9KkNNNc84mCGjelJw4Kk1ci7vvEf4+gTXJ4V5lGCwGQk1oCVzOA8yLoO9sQpFSTOM+Hpi089HTwPHYAslufr9Xo7b51nGhZFh5J1m5+djfWlfwqKqrivhbSzN28Z7Ne1wE/ybhkd/+aV/16V+0WbI5GvIuc4sO7dveJdm9vbu9CBzodrc5oYV76CWmQNcfnp8S3QOKdSNt2AvcPGl8UkA/jBdzk8s1gKPhHdFdKOGE6Qq9r0gPJlCknplc/WgDTDIxEw5MB5cxnRvDReXLceBxxYnJf64tbrQiBJXiR2/UmtJfwy+xYFnBhLDm3i7cA8KCRT1ysWEw5F9o0thTDusoVIVKmO8LmjWg6clAlwo7sZXU3Gyt8g1vEOCq8KYWIt+B15hoZfP4hBOEUc+qztEe0iVq6XhEP4DW7bwGI4V3o3ylaEtTXxbR7AsPTXdlavBVj7JOgj2jzzdMpjcUT1PMwgkVHvYs3snCSPb1ghsJaWaExsXvYH33/4d0675PLHK6Oc94Rh9bQTpKmBT5v8nxcXUNFP/PX8zKw+fHHy+ObCqIe22yXP5H+LjFN9n+zZPAnXbTkCTvOP3UAXXiFGQh9dXc/fhvawpl2UniebyC6nkgJJHASZ/vaEWvZJI95POdD9LrJ7XYLcqvcT+LRl1PAwx6ntm1Zbc7Kc9OpF1MkSptiDjLQV9r6sOT3aPVg0dnArfmBZqGrakoBu8luUBHhLcNCUHuGKduJ7kht1ORx4OXLdN5v4ETy+ZCge9BUdyONOC71f312XnDYFN7Kj2mcOt7R7SrsqUOdLqflTeu+KtsrlJM0i7WQgliiEiXNzN7veaRDjnc3AdMyw20It2bAufJJ2V1GgO2TfIr9Qb72jjVulSlFSZdTAgxyuYPMp+4hBsu4V/JEsCTvohzEu8w7Byw4Y8rtY7m48IsNoYqmezaSDIle+HSz8HL7XttS6aREYhLRSvjza9qllv+5mHEueSxx5YaLC3Wjjw+xGbjszKeijnr357CH/E5GquMM6B+OsQDpXcoFxRfGBsp7/B36KemU9jUdLqF7OLfvlcU8AuDyXAFbuLXErk2fj+nCqkTQvE0IO2MF1VESjjhh8NmiP4A4P4geeHLSN0uNwS9lWe5+XlI+A0+HBb67yO1Rw90mD7PtLu9EBMl41CSAfrX5TpoFMjlo77YlDGqmwS7vQn8ekkScuizLDO/JycnJycnJycnJx+SX8Aj1Eo6XeYbIQAAAAASUVORK5CYII=" 
             alt="PetPulse Logo">
@@ -34,18 +117,30 @@
         
         <!-- Task #800, #815 and #994 - Link section to other pages -->
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="About_Us.html">About Us</a>
-            <a href="Pet_Education.html">Pet Education</a>
-            <a href="Pet_Events.html">Pet Events</a>
-            <a href="pet_services_StoreInfo.html">Pet Services</a>
-            <a href="Pet_Social.html">Pet Social</a>
-            <a href="Inquiry.html">Contact</a>
-        </nav>
+        <!-- Creating drop down menu for user story#654 (DB)-->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About_Us.html">About Us</a></li>
+            <li><a href="Pet_Education.html">Pet Education</a></li>
+            <li><a href="Pet_Events.html">Pet Events</a></li>
+            <li><a href="pet_services_StoreInfo.html">Pet Services</a>
+                <ul>
+                    <li><a href="service_reviews.html">Service Reviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="Pet_Social.html">Pet Social</a></li>
+            <li><a href="Inquiry.html">Contact</a></li>
+            <!------- User Story: 791 Tasks:1194 1195---- (DB)----Linked to other pages------------------------>
+            <li><a href="SignIn.html">Sign In</a></li>
+            <li><a href="sign_up.html">Sign Up</a></li>
+        </ul>
+    </nav>
         
 
     </header>
+    <br>
+    <br>
 
     <h1>Contact Us</h1>
     <div id="inquiry-form">
@@ -83,4 +178,5 @@
     <!-- End of Emergency Contact Provider Section -->
 
 </body>
+</head>
 </html>

@@ -5,6 +5,25 @@
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        
+        /* Style for the subpages */
+        li ul {
+            background-color: #f0f0f0; /* Background color for the submenu */
+            padding: 10px;
+            border-radius: 5px;
+            display: none; /* Hide the submenu by default */
+        }
+
+        li:hover ul {
+            display: block; /* Display the submenu on hover */
+        }
+
+        li ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+
     </head>
     
     <body>
@@ -36,7 +55,12 @@
                 </ul>
             </li>
 
-            <li><a href="Pet_Social.html">Pet Social</a></li>
+            <li><a href="Pet_Social.html">Pet Social</a>
+                <ul>
+                    <li><a href="Pet_Social_CreateEvent.html">Create Events</a></li>
+                    <li><a href="Pet_Social_MobileVR.html">View and Adopt</a></li>
+                </ul>
+            </li>
             <li><a href="Inquiry.html">Contact</a></li>
             <!------- User Story: 791 Tasks:1194 1195---- (DB)----Linked to other pages------------------------>
             <li><a href="SignIn.html">Sign In</a></li>
@@ -68,13 +92,6 @@
 </head>
 <body>
 
-<br>
-<br>
-<center><h1>Upcoming Events</h1></center>
-<br>
-<br>
-
-
     <!-- Story: 1110 Virtual Pet Metaverse -->
     <!-- Task: 1112 -->
 <!-- Header for the Virtual Pet Metaverse section -->
@@ -87,16 +104,14 @@
 <a href="VirtualPetMetaverse.html">
     <button>Enter the Virtual Pet Metaverse</button>
 </a>
+    <br>
 
-    <!-- Link to the Event Input Page -->
-    <left><a href="Pet_Social_CreateEvent.html">
-        <button>Create Event</button>
-    </a></left>
+    <!-- Story: 603 & 604 -->
     <br>
     <br>
-  
-
-    
+    <center><h1>Upcoming Events</h1></center>
+    <br>
+    <br>
 
     <ul id="eventList">
         <!-- Existing events will be displayed here -->
